@@ -18,41 +18,41 @@ LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,				// 프로그램의 인스턴스 핸들
-                     _In_opt_ HINSTANCE hPrevInstance,		// 이전에 실행한 현재 프로그램의 인스턴스 핸들, 없을 시 NULL
-                     _In_ LPWSTR    lpCmdLine,				// 명령행으로 입력된 프로그램 인수
-                     _In_ int       nCmdShow)				// 프로그램이 실행될 형태, 보통 모양 정보 등이 전달
+	_In_opt_ HINSTANCE hPrevInstance,		// 이전에 실행한 현재 프로그램의 인스턴스 핸들, 없을 시 NULL
+	_In_ LPWSTR    lpCmdLine,				// 명령행으로 입력된 프로그램 인수
+	_In_ int       nCmdShow)				// 프로그램이 실행될 형태, 보통 모양 정보 등이 전달
 {
-    UNREFERENCED_PARAMETER(hPrevInstance);
-    UNREFERENCED_PARAMETER(lpCmdLine);
+	UNREFERENCED_PARAMETER(hPrevInstance);
+	UNREFERENCED_PARAMETER(lpCmdLine);
 
-    // TODO: 여기에 코드를 입력합니다.
+	// TODO: 여기에 코드를 입력합니다.
 
-    // 전역 문자열을 초기화합니다.
-    LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
-    LoadStringW(hInstance, IDC_EDITORWINDOW, szWindowClass, MAX_LOADSTRING);
-    MyRegisterClass(hInstance);
+	// 전역 문자열을 초기화합니다.
+	LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
+	LoadStringW(hInstance, IDC_EDITORWINDOW, szWindowClass, MAX_LOADSTRING);
+	MyRegisterClass(hInstance);
 
-    // 애플리케이션 초기화를 수행합니다:
-    if (!InitInstance (hInstance, nCmdShow))
-    {
-        return FALSE;
-    }
+	// 애플리케이션 초기화를 수행합니다:
+	if (!InitInstance(hInstance, nCmdShow))
+	{
+		return FALSE;
+	}
 
-    HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_EDITORWINDOW));
+	HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_EDITORWINDOW));
 
-    MSG msg;
+	MSG msg;
 
-    // 기본 메시지 루프입니다:
-    while (GetMessage(&msg, nullptr, 0, 0))
-    {
-        if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
-        {
-            TranslateMessage(&msg);
-            DispatchMessage(&msg);
-        }
-    }
+	// 기본 메시지 루프입니다:
+	while (GetMessage(&msg, nullptr, 0, 0))
+	{
+		if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+		{
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
+		}
+	}
 
-    return (int) msg.wParam;
+	return (int)msg.wParam;
 }
 
 ///
@@ -71,23 +71,23 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,				// 프로그램의 인스턴�
 //
 ATOM MyRegisterClass(HINSTANCE hInstance)
 {
-    WNDCLASSEXW wcex;
+	WNDCLASSEXW wcex;
 
-    wcex.cbSize = sizeof(WNDCLASSEX);
+	wcex.cbSize = sizeof(WNDCLASSEX);
 
-    wcex.style          = CS_HREDRAW | CS_VREDRAW;
-    wcex.lpfnWndProc    = WndProc;
-    wcex.cbClsExtra     = 0;
-    wcex.cbWndExtra     = 0;
-    wcex.hInstance      = hInstance;
-    wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_EDITORWINDOW));
-    wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
-    wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
-    wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_EDITORWINDOW);
-    wcex.lpszClassName  = szWindowClass;
-    wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
+	wcex.style = CS_HREDRAW | CS_VREDRAW;
+	wcex.lpfnWndProc = WndProc;
+	wcex.cbClsExtra = 0;
+	wcex.cbWndExtra = 0;
+	wcex.hInstance = hInstance;
+	wcex.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_EDITORWINDOW));
+	wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
+	wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
+	wcex.lpszMenuName = MAKEINTRESOURCEW(IDC_EDITORWINDOW);
+	wcex.lpszClassName = szWindowClass;
+	wcex.hIconSm = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
 
-    return RegisterClassExW(&wcex);
+	return RegisterClassExW(&wcex);
 }
 
 //
@@ -102,20 +102,20 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 //
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
-   hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
+	hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
-   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, 1600, 900, nullptr, nullptr, hInstance, nullptr);
+	HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
+		CW_USEDEFAULT, 0, 1600, 900, nullptr, nullptr, hInstance, nullptr);
 
-   if (!hWnd)
-   {
-      return FALSE;
-   }
+	if (!hWnd)
+	{
+		return FALSE;
+	}
 
-   ShowWindow(hWnd, nCmdShow);
-   UpdateWindow(hWnd);
+	ShowWindow(hWnd, nCmdShow);
+	UpdateWindow(hWnd);
 
-   return TRUE;
+	return TRUE;
 }
 
 //
@@ -130,90 +130,90 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-    switch (message)
-    {
-    case WM_COMMAND:
-        {
-            int wmId = LOWORD(wParam);
-            // 메뉴 선택을 구문 분석합니다:
-            switch (wmId)
-            {
-            case IDM_ABOUT:
-                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-                break;
-            case IDM_EXIT:
-                DestroyWindow(hWnd);
-                break;
-            default:
-                return DefWindowProc(hWnd, message, wParam, lParam);
-            }
-        }
-        break;
-    case WM_PAINT:
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hWnd, &ps);
+	switch (message)
+	{
+	case WM_COMMAND:
+	{
+		int wmId = LOWORD(wParam);
+		// 메뉴 선택을 구문 분석합니다:
+		switch (wmId)
+		{
+		case IDM_ABOUT:
+			DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+			break;
+		case IDM_EXIT:
+			DestroyWindow(hWnd);
+			break;
+		default:
+			return DefWindowProc(hWnd, message, wParam, lParam);
+		}
+	}
+	break;
+	case WM_PAINT:
+	{
+		PAINTSTRUCT ps;
+		HDC hdc = BeginPaint(hWnd, &ps);
 
-			// DC란 (Handle Device Conetext)
-			// 화면에 출력에 필요한 모든 정보(도구와 설정)를 가지는 구조체이며
-			// GDI 모듈에 의해서 관리된다.
-			// 어떤 폰트, 굵기, 색상으로 그려줄껀가
-			// 화면 출력에 필요한 모든 경우는 WINAPI에서는 DC를 통해서 작업을 진행한다.
+		// DC란 (Handle Device Conetext)
+		// 화면에 출력에 필요한 모든 정보(도구와 설정)를 가지는 구조체이며
+		// GDI 모듈에 의해서 관리된다.
+		// 어떤 폰트, 굵기, 색상으로 그려줄껀가
+		// 화면 출력에 필요한 모든 경우는 WINAPI에서는 DC를 통해서 작업을 진행한다.
 
-            // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
-			TextOut(hdc, 10, 10, L"Hello, WinAPI!", 14);
+		// TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
+		TextOut(hdc, 10, 10, L"Hello, WinAPI!", 14);
 
-			HBRUSH brush = CreateSolidBrush(RGB(0, 0, 255));
-			HBRUSH prevBrush = (HBRUSH)SelectObject(hdc, brush);
+		HBRUSH brush = CreateSolidBrush(RGB(0, 0, 255));
+		HBRUSH prevBrush = (HBRUSH)SelectObject(hdc, brush);
 
-			HPEN pen = CreatePen(PS_DASHDOTDOT, 2, RGB(255, 0, 0));
-			HPEN prevPen = (HPEN)SelectObject(hdc, pen);
+		HPEN pen = CreatePen(PS_DASHDOTDOT, 2, RGB(255, 0, 0));
+		HPEN prevPen = (HPEN)SelectObject(hdc, pen);
 
-			Rectangle(hdc, 100, 100, 300, 300);
-			Ellipse(hdc, 200, 200, 400, 400);
+		Rectangle(hdc, 100, 100, 300, 300);
+		Ellipse(hdc, 200, 200, 400, 400);
 
-			// 사용 후 해제하는 것이 api 프로그래밍에서 메모리 누수를 막을 수 있다.
-			SelectObject(hdc, prevBrush);
-			DeleteObject(brush);
+		// 사용 후 해제하는 것이 api 프로그래밍에서 메모리 누수를 막을 수 있다.
+		SelectObject(hdc, prevBrush);
+		DeleteObject(brush);
 
-			SelectObject(hdc, prevPen);
-			DeleteObject(pen);
+		SelectObject(hdc, prevPen);
+		DeleteObject(pen);
 
-			Ellipse(hdc, 500, 200, 600, 300);
+		Ellipse(hdc, 500, 200, 600, 300);
 
-			// 기본으로 자주 사용되는 GDI 오브젝트를 미리 DC 안에 만들어 두었는데
-			// 그 오브젝트들을 스톡 오브젝트라고 한다.
+		// 기본으로 자주 사용되는 GDI 오브젝트를 미리 DC 안에 만들어 두었는데
+		// 그 오브젝트들을 스톡 오브젝트라고 한다.
 
-			HBRUSH grayBrush = (HBRUSH)GetStockObject(GRAY_BRUSH);
+		HBRUSH grayBrush = (HBRUSH)GetStockObject(GRAY_BRUSH);
 
-            EndPaint(hWnd, &ps);
-        }
-        break;
-    case WM_DESTROY:
-        PostQuitMessage(0);
-        break;
-    default:
-        return DefWindowProc(hWnd, message, wParam, lParam);
-    }
-    return 0;
+		EndPaint(hWnd, &ps);
+	}
+	break;
+	case WM_DESTROY:
+		PostQuitMessage(0);
+		break;
+	default:
+		return DefWindowProc(hWnd, message, wParam, lParam);
+	}
+	return 0;
 }
 
 // 정보 대화 상자의 메시지 처리기입니다.
 INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
 {
-    UNREFERENCED_PARAMETER(lParam);
-    switch (message)
-    {
-    case WM_INITDIALOG:
-        return (INT_PTR)TRUE;
+	UNREFERENCED_PARAMETER(lParam);
+	switch (message)
+	{
+	case WM_INITDIALOG:
+		return (INT_PTR)TRUE;
 
-    case WM_COMMAND:
-        if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
-        {
-            EndDialog(hDlg, LOWORD(wParam));
-            return (INT_PTR)TRUE;
-        }
-        break;
-    }
-    return (INT_PTR)FALSE;
+	case WM_COMMAND:
+		if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
+		{
+			EndDialog(hDlg, LOWORD(wParam));
+			return (INT_PTR)TRUE;
+		}
+		break;
+	}
+	return (INT_PTR)FALSE;
 }
