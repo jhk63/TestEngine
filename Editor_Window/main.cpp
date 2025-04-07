@@ -4,6 +4,11 @@
 #include "framework.h"
 #include "Editor_Window.h"
 
+#include "..\\TestEngine_SOURCE\\TEApplication.h"
+
+
+Application app;
+
 #define MAX_LOADSTRING 100
 
 // 전역 변수:
@@ -26,6 +31,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,				// 프로그램의 인스턴�
 	UNREFERENCED_PARAMETER(lpCmdLine);
 
 	// TODO: 여기에 코드를 입력합니다.
+	app.Test();
 
 	// 전역 문자열을 초기화합니다.
 	LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
@@ -43,6 +49,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,				// 프로그램의 인스턴�
 	MSG msg;
 
 	// 기본 메시지 루프입니다:
+	/*
 	while (GetMessage(&msg, nullptr, 0, 0))
 	{
 		if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
@@ -51,18 +58,37 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,				// 프로그램의 인스턴�
 			DispatchMessage(&msg);
 		}
 	}
+	*/
+
+	// GetMessage(&msg, nullptr, 0, 0)
+	// 프로세스에서 발생한 메세지를 메세지 큐에서 가져오는 함수
+	// 메세지 큐에 아무것도 없다면 아무 메세지도 가져오지 않는다.
+
+	// PeekMessage: 큐에 메세지 유무에 상관없이 함수가 리턴된다.
+	//				리턴 값이 true 인 경우 메세지가 있고, false 인 경우 메세지가 없다고 알려준다.
+
+	while (true)
+	{
+		if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
+		{
+			if (msg.message == WM_QUIT)
+				break;
+
+			if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+			{
+				TranslateMessage(&msg);
+				DispatchMessage(&msg);
+			}
+		}
+		else
+		{
+			// 메세지가 없을 경우 여기서 처리
+			// 게임 로직
+		}
+	}
 
 	return (int)msg.wParam;
 }
-
-///
-/// 캐릭터 구현
-/// 몬스터 구현
-/// UI 구현
-/// 
-/// 형상 관리 프로그램 필요
-/// 
-
 
 //
 //  함수: MyRegisterClass()

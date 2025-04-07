@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35913.81 d17.13
+VisualStudioVersion = 17.13.35913.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Editor_Window", "Editor_Window\Editor_Window.vcxproj", "{3DB7CECD-352E-45AB-8988-3F788EDC43FC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestEngine_Window", "TestEngine_Window\TestEngine_Window.vcxproj", "{E1CD8466-F309-4201-B322-9BCCB4E72A6F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestEngine_SOURCE", "TestEngine_SOURCE\TestEngine_SOURCE.vcxitems", "{F1E858C0-48E4-4F06-ACB6-0DDA310A1463}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,11 +25,23 @@ Global
 		{3DB7CECD-352E-45AB-8988-3F788EDC43FC}.Release|x64.Build.0 = Release|x64
 		{3DB7CECD-352E-45AB-8988-3F788EDC43FC}.Release|x86.ActiveCfg = Release|Win32
 		{3DB7CECD-352E-45AB-8988-3F788EDC43FC}.Release|x86.Build.0 = Release|Win32
+		{E1CD8466-F309-4201-B322-9BCCB4E72A6F}.Debug|x64.ActiveCfg = Debug|x64
+		{E1CD8466-F309-4201-B322-9BCCB4E72A6F}.Debug|x64.Build.0 = Debug|x64
+		{E1CD8466-F309-4201-B322-9BCCB4E72A6F}.Debug|x86.ActiveCfg = Debug|Win32
+		{E1CD8466-F309-4201-B322-9BCCB4E72A6F}.Debug|x86.Build.0 = Debug|Win32
+		{E1CD8466-F309-4201-B322-9BCCB4E72A6F}.Release|x64.ActiveCfg = Release|x64
+		{E1CD8466-F309-4201-B322-9BCCB4E72A6F}.Release|x64.Build.0 = Release|x64
+		{E1CD8466-F309-4201-B322-9BCCB4E72A6F}.Release|x86.ActiveCfg = Release|Win32
+		{E1CD8466-F309-4201-B322-9BCCB4E72A6F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4990E4C9-5652-4349-AE82-43C1B1C0AD56}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		TestEngine_SOURCE\TestEngine_SOURCE.vcxitems*{e1cd8466-f309-4201-b322-9bccb4e72a6f}*SharedItemsImports = 4
+		TestEngine_SOURCE\TestEngine_SOURCE.vcxitems*{f1e858c0-48e4-4f06-acb6-0dda310a1463}*SharedItemsImports = 9
 	EndGlobalSection
 EndGlobal
