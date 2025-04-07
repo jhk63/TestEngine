@@ -15,22 +15,22 @@ namespace TestEngine
 
 	void GameObject::Update()
 	{
-		if (Input::GetKey(eKeyCode::A) || Input::GetKey(eKeyCode::Left))
+		if (Input::GetKey(eKeyCode::A))
 		{
 			mX -= 0.01f;
 		}
 
-		if (Input::GetKey(eKeyCode::D) || Input::GetKey(eKeyCode::Right))
+		if (Input::GetKey(eKeyCode::D))
 		{
 			mX += 0.01f;
 		}
 
-		if (Input::GetKey(eKeyCode::W) || Input::GetKey(eKeyCode::Up))
+		if (Input::GetKey(eKeyCode::W))
 		{
 			mY -= 0.01f;
 		}
 
-		if (Input::GetKey(eKeyCode::S) || Input::GetKey(eKeyCode::Down))
+		if (Input::GetKey(eKeyCode::S))
 		{
 			mY += 0.01f;
 		}
