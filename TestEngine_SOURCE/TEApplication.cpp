@@ -1,6 +1,8 @@
 
 #include "TEApplication.h"
 
+#include "Input.h"
+
 
 namespace TestEngine
 {
@@ -18,6 +20,8 @@ namespace TestEngine
 	{
 		mHwnd = hWnd;
 		mHdc = GetDC(hWnd);
+
+		Input::Initialize();
 	}
 
 	void Application::Run()
@@ -30,6 +34,8 @@ namespace TestEngine
 
 	void Application::Update()
 	{
+		Input::Update();
+
 		mPlayer.Update();
 	}
 

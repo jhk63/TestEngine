@@ -1,5 +1,6 @@
 
 #include "GameObject.h"
+#include "Input.h"
 
 
 namespace TestEngine
@@ -14,24 +15,24 @@ namespace TestEngine
 
 	void GameObject::Update()
 	{
-		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
+		if (Input::GetKey(eKeyCode::A))
 		{
 			mX -= 0.01f;
 		}
 
-		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
+		if (Input::GetKey(eKeyCode::D))
 		{
-			mX += 0.1f;
+			mX += 0.01f;
 		}
 
-		if (GetAsyncKeyState(VK_UP) & 0x8000)
+		if (Input::GetKey(eKeyCode::W))
 		{
-			mY -= 0.1f;
+			mY -= 0.01f;
 		}
 
-		if (GetAsyncKeyState(VK_DOWN) & 0x8000)
+		if (Input::GetKey(eKeyCode::S))
 		{
-			mY += 0.1f;
+			mY += 0.01f;
 		}
 	}
 
@@ -41,6 +42,12 @@ namespace TestEngine
 
 	void GameObject::Render(HDC hdc)
 	{
+		HBRUSH brush = CreateSolidBrush(RGB(0, 0, 255));
+		HBRUSH prevBrush = (HBRUSH)SelectObject(hdc, brush);
+
 		Rectangle(hdc, 500 + mX, 500 + mY, 600 + mX, 600 + mY);
+
+		SelectObject(hdc, prevBrush);
+		DeleteObject(brush);
 	}
 }
