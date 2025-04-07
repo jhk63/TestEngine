@@ -30,15 +30,7 @@ namespace TestEngine
 
 	void Application::Update()
 	{
-		if (GetAsyncKeyState(VK_LEFT) & 0x8000)
-		{
-			mX -= 0.1f;
-		}
-
-		if (GetAsyncKeyState(VK_RIGHT) & 0x8000)
-		{
-			mX += 0.1f;
-		}
+		mPlayer.Update();
 	}
 
 	void Application::LateUpdate()
@@ -48,6 +40,6 @@ namespace TestEngine
 
 	void Application::Render()
 	{
-		Rectangle(mHdc, 500 + mX, 500, 600 + mX, 600);
+		mPlayer.Render(mHdc);
 	}
 }

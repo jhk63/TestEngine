@@ -183,40 +183,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		PAINTSTRUCT ps;
 		HDC hdc = BeginPaint(hWnd, &ps);
 
-		// 
-		// DC란 (Handle Device Conetext)
-		// 화면에 출력에 필요한 모든 정보(도구와 설정)를 가지는 구조체이며
-		// GDI 모듈에 의해서 관리된다.
-		// 어떤 폰트, 굵기, 색상으로 그려줄껀가
-		// 화면 출력에 필요한 모든 경우는 WINAPI에서는 DC를 통해서 작업을 진행한다.
-		// 
-
-		// TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
-		TextOut(hdc, 10, 10, L"Hello, WinAPI!", 14);
-
-		HBRUSH brush = CreateSolidBrush(RGB(0, 0, 255));
-		HBRUSH prevBrush = (HBRUSH)SelectObject(hdc, brush);
-
-		HPEN pen = CreatePen(PS_DASHDOTDOT, 2, RGB(255, 0, 0));
-		HPEN prevPen = (HPEN)SelectObject(hdc, pen);
-
-		Rectangle(hdc, 100, 100, 300, 300);
-		Ellipse(hdc, 200, 200, 400, 400);
-
-		// 사용 후 해제하는 것이 api 프로그래밍에서 메모리 누수를 막을 수 있다.
-		SelectObject(hdc, prevBrush);
-		DeleteObject(brush);
-
-		SelectObject(hdc, prevPen);
-		DeleteObject(pen);
-
-		Ellipse(hdc, 500, 200, 600, 300);
-
-		// 기본으로 자주 사용되는 GDI 오브젝트를 미리 DC 안에 만들어 두었는데
-		// 그 오브젝트들을 스톡 오브젝트라고 한다.
-
-		HBRUSH grayBrush = (HBRUSH)GetStockObject(GRAY_BRUSH);
-
 		EndPaint(hWnd, &ps);
 	}
 	break;

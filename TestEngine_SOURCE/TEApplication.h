@@ -2,6 +2,7 @@
 #pragma once
 
 #include "CommonInclude.h"
+#include "GameObject.h"
 
 
 namespace TestEngine
@@ -24,7 +25,6 @@ namespace TestEngine
 		HWND mHwnd;
 		HDC mHdc;
 
-		float mX = 0;
-		float mY = 0;
+		GameObject mPlayer;
 	};
 }
