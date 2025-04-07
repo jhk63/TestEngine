@@ -1,8 +1,30 @@
+
 #pragma once
-class Application
+
+#include "CommonInclude.h"
+
+
+namespace TestEngine
 {
-public:
-	void Test();
+	class Application
+	{
+	public:
+		Application();
+		~Application();
 
-};
+		void Initialize(HWND);
+		void Run();
 
+		void Update();
+		void LateUpdate();
+
+		void Render();
+
+	private:
+		HWND mHwnd;
+		HDC mHdc;
+
+		float mX = 0;
+		float mY = 0;
+	};
+}

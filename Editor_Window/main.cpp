@@ -7,7 +7,7 @@
 #include "..\\TestEngine_SOURCE\\TEApplication.h"
 
 
-Application app;
+TestEngine::Application application;
 
 #define MAX_LOADSTRING 100
 
@@ -31,7 +31,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,				// 프로그램의 인스턴�
 	UNREFERENCED_PARAMETER(lpCmdLine);
 
 	// TODO: 여기에 코드를 입력합니다.
-	app.Test();
 
 	// 전역 문자열을 초기화합니다.
 	LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
@@ -84,6 +83,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,				// 프로그램의 인스턴�
 		{
 			// 메세지가 없을 경우 여기서 처리
 			// 게임 로직
+			application.Run();
 		}
 	}
 
@@ -138,6 +138,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 		return FALSE;
 	}
 
+	// 어플리케이션 초기화
+	application.Initialize(hWnd);
+
 	ShowWindow(hWnd, nCmdShow);
 	UpdateWindow(hWnd);
 
@@ -180,11 +183,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		PAINTSTRUCT ps;
 		HDC hdc = BeginPaint(hWnd, &ps);
 
+		// 
 		// DC란 (Handle Device Conetext)
 		// 화면에 출력에 필요한 모든 정보(도구와 설정)를 가지는 구조체이며
 		// GDI 모듈에 의해서 관리된다.
 		// 어떤 폰트, 굵기, 색상으로 그려줄껀가
 		// 화면 출력에 필요한 모든 경우는 WINAPI에서는 DC를 통해서 작업을 진행한다.
+		// 
 
 		// TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
 		TextOut(hdc, 10, 10, L"Hello, WinAPI!", 14);
