@@ -33,7 +33,7 @@ namespace TestEngine
 			bool bPressed;
 		};
 
-		static void Initialize();
+		static bool Initialize();
 		static void Update();
 
 		static bool GetKey(eKeyCode keyCode) { return mKeys[(UINT)keyCode].state == eKeyState::Pressed; }

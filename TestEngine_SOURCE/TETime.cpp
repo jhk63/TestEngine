@@ -10,13 +10,15 @@ namespace TestEngine
 
 	float Time::mDeltaTime = 0.f;
 
-	void Time::Initialize()
+	bool Time::Initialize()
 	{
 		// CPU의 고유 진동 수
 		QueryPerformanceFrequency(&CpuFrequency);
 
 		// 프로그램이 시작 했을 때 현재 진동 수
 		QueryPerformanceCounter(&PrevFrequency);
+
+		return true;
 	}
 
 	void Time::Update()
@@ -43,6 +45,6 @@ namespace TestEngine
 		swprintf_s(str, 50, L"Fps: %d", (int)fps);
 		int len = wcsnlen_s(str, 50);
 
-		TextOut(hdc, 0, 0, str, len);
+		TextOut(hdc, 10, 10, str, len);
 	}
 }

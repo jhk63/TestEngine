@@ -9,7 +9,7 @@ namespace TestEngine
 	class Time
 	{
 	public:
-		static void Initialize();
+		static bool Initialize();
 		static void Update();
 		static void Render(HDC hdc);
 
