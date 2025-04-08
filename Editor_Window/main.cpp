@@ -5,6 +5,7 @@
 #include "Editor_Window.h"
 
 #include "..\\TestEngine_SOURCE\\TEApplication.h"
+#include "..\\TestEngine_Window\\TELoadScenes.h"
 
 
 TestEngine::Application application;
@@ -144,10 +145,17 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 	}
 
 	// 어플리케이션 초기화
-	if (!application.Initialize(hWnd, width, height)) { return false; }
+	bool result = application.Initialize(hWnd, width, height);
+	if (!result) 
+	{
+		return false;
+	}
 
 	ShowWindow(hWnd, nCmdShow);
 	UpdateWindow(hWnd);
+
+	// Load Scenes
+	TestEngine::LoadScenes();
 
 	return TRUE;
 }

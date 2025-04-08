@@ -15,15 +15,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TEEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEApplication.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TEScene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TESceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TETime.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)TEEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEApplication.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)TEScene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)TESceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TETime.cpp" />
   </ItemGroup>
 </Project>

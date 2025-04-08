@@ -38,6 +38,7 @@ namespace TestEngine
 		UINT mWidth = 0;
 		UINT mHeight = 0;
 
-		std::vector<class GameObject*> mGameObjects;
+		//std::vector<class GameObject*> mGameObjects = {};
+		//std::vector<class Scene*> mScenes;
 	};
 }

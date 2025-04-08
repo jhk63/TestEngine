@@ -4,13 +4,13 @@
 #include "TEGameObject.h"
 #include "TEInput.h"
 #include "TETime.h"
+#include "TESceneManager.h"
 
 
 namespace TestEngine
 {
 	Application::Application()
 	{
-		//mGameObjects = {};
 	}
 
 	Application::~Application()
@@ -32,23 +32,13 @@ namespace TestEngine
 
 		if (!Input::Initialize()) { return false; }
 		if (!Time::Initialize()) { return false; }
-
-		GameObject* mPlayer = new GameObject;
-		if (!mPlayer) { return false; }
-
-		mGameObjects.push_back(mPlayer);
+		if (!SceneManager::Initialize()) { return false; }
 
 		return true;
 	}
 
 	void Application::Shutdown()
 	{
-		for (GameObject* gameObj : mGameObjects)
-		{
-			delete gameObj;
-		}
-
-		mGameObjects.clear();
 	}
 
 	void Application::Run()
@@ -63,11 +53,7 @@ namespace TestEngine
 	{
 		Input::Update();
 		Time::Update();
-
-		for (GameObject* gameObj : mGameObjects)
-		{
-			gameObj->Update();
-		}
+		SceneManager::Update();
 	}
 
 	void Application::LateUpdate()
@@ -80,11 +66,7 @@ namespace TestEngine
 		ClearRenderTarget(mBackHdc);
 		
 		Time::Render(mBackHdc);
-
-		for (GameObject* gameObj : mGameObjects)
-		{
-			gameObj->Render(mBackHdc);
-		}
+		SceneManager::Render(mBackHdc);
 
 		CopyRenderTarget(mBackHdc, mHdc);
 	}
@@ -116,7 +98,7 @@ namespace TestEngine
 		HBITMAP prevBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBitmap);
 		DeleteObject(prevBitmap);
 
-		return false;
+		return true;
 	}
 
 	void Application::ClearRenderTarget(HDC target)

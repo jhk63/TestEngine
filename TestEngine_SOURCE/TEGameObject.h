@@ -23,7 +23,7 @@ namespace TestEngine
 		float GetPositionY() { return mY; }
 
 	private:
-		float mX;
-		float mY;
+		float mX = 0;
+		float mY = 0;
 	};
 }

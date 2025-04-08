@@ -9,8 +9,6 @@ namespace TestEngine
 {
 	GameObject::GameObject()
 	{
-		mX = 0;
-		mY = 0;
 	}
 
 	GameObject::~GameObject()
@@ -48,7 +46,8 @@ namespace TestEngine
 
 	void GameObject::Render(HDC hdc)
 	{
-		HBRUSH brush = CreateSolidBrush(RGB(0, 0, 255));
+		//HBRUSH brush = CreateSolidBrush(RGB(0, 0, 255));
+		HBRUSH brush = CreateSolidBrush(RGB(rand() % 255, rand() % 255, rand() % 255));
 		HBRUSH prevBrush = (HBRUSH)SelectObject(hdc, brush);
 
 		Rectangle(hdc, 500 + mX, 500 + mY, 600 + mX, 600 + mY);
