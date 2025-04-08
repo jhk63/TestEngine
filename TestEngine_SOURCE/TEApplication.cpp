@@ -1,7 +1,8 @@
 
 #include "TEApplication.h"
 
-#include "Input.h"
+#include "TEInput.h"
+#include "TETime.h"
 
 
 namespace TestEngine
@@ -22,6 +23,7 @@ namespace TestEngine
 		mHdc = GetDC(hWnd);
 
 		Input::Initialize();
+		Time::Initialize();
 	}
 
 	void Application::Run()
@@ -35,6 +37,7 @@ namespace TestEngine
 	void Application::Update()
 	{
 		Input::Update();
+		Time::Update();
 
 		mPlayer.Update();
 	}
@@ -46,6 +49,8 @@ namespace TestEngine
 
 	void Application::Render()
 	{
+		Time::Render(mHdc);
+
 		mPlayer.Render(mHdc);
 	}
 }

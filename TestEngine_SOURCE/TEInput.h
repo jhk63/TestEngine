@@ -41,6 +41,9 @@ namespace TestEngine
 		static bool GetkeyUp(eKeyCode keyCode) { return mKeys[(UINT)keyCode].state == eKeyState::Up; }
 
 	private:
+		static void CreateKeys();
+
+	private:
 		//eKeyState mState[] = eKeyState::Down;
 		static std::vector<Key> mKeys;
 	};

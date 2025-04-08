@@ -183,7 +183,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		PAINTSTRUCT ps;
 		HDC hdc = BeginPaint(hWnd, &ps);
 
-		TextOut(hdc, 10, 10, L"Hello, WinAPI!", 14);
+		// TextOut(hdc, 10, 10, L"Hello, WinAPI!", 14);
 
 		EndPaint(hWnd, &ps);
 	}

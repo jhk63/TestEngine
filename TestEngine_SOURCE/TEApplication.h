@@ -2,7 +2,7 @@
 #pragma once
 
 #include "CommonInclude.h"
-#include "GameObject.h"
+#include "TEGameObject.h"
 
 
 namespace TestEngine

@@ -1,12 +1,16 @@
 
-#include "GameObject.h"
-#include "Input.h"
+#include "TEGameObject.h"
+
+#include "TEInput.h"
+#include "TETime.h"
 
 
 namespace TestEngine
 {
 	GameObject::GameObject()
 	{
+		mX = 0;
+		mY = 0;
 	}
 
 	GameObject::~GameObject()
@@ -15,24 +19,26 @@ namespace TestEngine
 
 	void GameObject::Update()
 	{
+		const int speed = 200.f;
+
 		if (Input::GetKey(eKeyCode::A) || Input::GetKey(eKeyCode::Left))
 		{
-			mX -= 0.01f;
+			mX -= speed * Time::DeltaTime();
 		}
 
 		if (Input::GetKey(eKeyCode::D) || Input::GetKey(eKeyCode::Right))
 		{
-			mX += 0.01f;
+			mX += speed * Time::DeltaTime();
 		}
 
 		if (Input::GetKey(eKeyCode::W) || Input::GetKey(eKeyCode::Up))
 		{
-			mY -= 0.01f;
+			mY -= speed * Time::DeltaTime();
 		}
 
 		if (Input::GetKey(eKeyCode::S) || Input::GetKey(eKeyCode::Down))
 		{
-			mY += 0.01f;
+			mY += speed * Time::DeltaTime();
 		}
 	}
 
