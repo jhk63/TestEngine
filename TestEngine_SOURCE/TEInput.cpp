@@ -14,9 +14,11 @@ namespace TestEngine
 		VK_LEFT, VK_RIGHT, VK_DOWN, VK_UP,
 	};
 
-	void Input::Initialize()
+	bool Input::Initialize()
 	{
 		CreateKeys();
+
+		return true;
 	}
 
 	void Input::Update()

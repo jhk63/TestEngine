@@ -87,6 +87,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,				// 프로그램의 인스턴�
 		}
 	}
 
+	application.Shutdown();
+
 	return (int)msg.wParam;
 }
 
@@ -130,8 +132,11 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
 	hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
+	const UINT width = 1600;
+	const UINT height = 900;
+
 	HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-		CW_USEDEFAULT, 0, 1600, 900, nullptr, nullptr, hInstance, nullptr);
+		CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr);
 
 	if (!hWnd)
 	{
@@ -139,7 +144,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 	}
 
 	// 어플리케이션 초기화
-	application.Initialize(hWnd);
+	if (!application.Initialize(hWnd, width, height)) { return false; }
 
 	ShowWindow(hWnd, nCmdShow);
 	UpdateWindow(hWnd);

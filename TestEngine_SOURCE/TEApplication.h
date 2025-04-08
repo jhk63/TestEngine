@@ -2,7 +2,6 @@
 #pragma once
 
 #include "CommonInclude.h"
-#include "TEGameObject.h"
 
 
 namespace TestEngine
@@ -13,7 +12,8 @@ namespace TestEngine
 		Application();
 		~Application();
 
-		void Initialize(HWND);
+		bool Initialize(HWND hWnd, UINT width, UINT height);
+		void Shutdown();
 		void Run();
 
 		void Update();
@@ -22,9 +22,22 @@ namespace TestEngine
 		void Render();
 
 	private:
-		HWND mHwnd;
-		HDC mHdc;
+		void InitializeWindows(UINT width, UINT height);
+		bool InitializeBackBuffer(UINT width, UINT height);
 
-		GameObject mPlayer;
+		void ClearRenderTarget(HDC target);
+		void CopyRenderTarget(HDC source, HDC dest);
+
+	private:
+		HWND mHwnd = nullptr;
+		HDC mHdc = nullptr;
+
+		HDC mBackHdc = nullptr;
+		HBITMAP mBackBitmap = nullptr;
+
+		UINT mWidth = 0;
+		UINT mHeight = 0;
+
+		std::vector<class GameObject*> mGameObjects;
 	};
 }
