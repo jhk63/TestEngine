@@ -21,10 +21,11 @@ namespace TestEngine
 	{
 		Player* player = new Player();
 		Transform* tr = player->AddComponent<Transform>();
-		tr->SetPos(600, 450);
+		tr->SetPos(Vector2(0, 0));
 		tr->SetName(L"Transform");
 		SpriteRenderer* sr = player->AddComponent<SpriteRenderer>();
 		sr->SetName(L"SpriteRenderer");
+		sr->ImageLoad(L"..\\Resources\\bg.png");
 
 		AddGameObject(player);
 

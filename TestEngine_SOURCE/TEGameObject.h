@@ -36,6 +36,7 @@ namespace TestEngine
 			T* targetComp = nullptr;
 			for (Component* comp : mComponents)
 			{
+				// RTTI
 				targetComp = dynamic_cast<T*>(comp);
 				if (targetComp)
 				{

@@ -17,7 +17,13 @@ namespace TestEngine
 		virtual void LateUpdate() override;
 		virtual void Render(HDC hdc) override;
 
-	private:
+		void ImageLoad(const std::wstring& path);
 
+		void ExamplePrintRectangle(HDC hdc);
+
+	private:
+		Gdiplus::Image* mImage = nullptr;
+		UINT mWidth = 0;
+		UINT mHeight = 0;
 	};
 }
