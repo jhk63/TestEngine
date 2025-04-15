@@ -4,6 +4,7 @@
 #include "TEGameObject.h"
 #include "TEPlayer.h"
 #include "TETransform.h"
+#include "TESpriteRenderer.h"
 
 
 namespace TestEngine
@@ -22,6 +23,8 @@ namespace TestEngine
 		Transform* tr = player->AddComponent<Transform>();
 		tr->SetPos(600, 450);
 		tr->SetName(L"Transform");
+		SpriteRenderer* sr = player->AddComponent<SpriteRenderer>();
+		sr->SetName(L"SpriteRenderer");
 
 		AddGameObject(player);
 
