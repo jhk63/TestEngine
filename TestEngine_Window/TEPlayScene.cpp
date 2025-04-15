@@ -2,6 +2,8 @@
 #include "TEPlayScene.h"
 
 #include "TEGameObject.h"
+#include "TEPlayer.h"
+#include "TETransform.h"
 
 
 namespace TestEngine
@@ -16,15 +18,12 @@ namespace TestEngine
 
 	bool PlayScene::Initialize()
 	{
-		//GameObject* obj = new GameObject;
-		//AddGameObject(obj);
+		Player* player = new Player();
+		Transform* tr = player->AddComponent<Transform>();
+		tr->SetPos(600, 450);
+		tr->SetName(L"Transform");
 
-		for (int i = 0; i < 20; i++)
-		{
-			GameObject* obj = new GameObject;
-			obj->SetPosition(rand() % 800, rand() % 450);
-			AddGameObject(obj);
-		}
+		AddGameObject(player);
 
 		return true;
 	}

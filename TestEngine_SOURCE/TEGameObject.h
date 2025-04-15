@@ -3,6 +3,8 @@
 
 #include "CommonInclude.h"
 
+#include "TEComponent.h"
+
 
 namespace TestEngine
 {
@@ -13,17 +15,38 @@ namespace TestEngine
 		GameObject();
 		~GameObject();
 
-		void Update();
-		void LateUpdate();
-		void Render(HDC);
+		virtual void Initialize();
+		virtual void Update();
+		virtual void LateUpdate();
+		virtual void Render(HDC hdc);
 
-		void SetPosition(float x, float y) { mX = x; mY = y; }
+		template <typename T>
+		T* AddComponent()
+		{
+			T* comp = new T();
+			comp->SetOwner(this);
+			mComponents.push_back(comp);
 
-		float GetPositionX() { return mX; }
-		float GetPositionY() { return mY; }
+			return comp;
+		}
+
+		template <typename T>
+		T* GetComponent()
+		{
+			T* targetComp = nullptr;
+			for (Component* comp : mComponents)
+			{
+				targetComp = dynamic_cast<T*>(comp);
+				if (targetComp)
+				{
+					break;
+				}
+			}
+
+			return targetComp;
+		}
 
 	private:
-		float mX = 0;
-		float mY = 0;
+		std::vector<Component*> mComponents;
 	};
 }

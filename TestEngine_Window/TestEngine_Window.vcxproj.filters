@@ -12,10 +12,12 @@
     <ClInclude Include="TEPlayScene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="TEPlayer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TEPlayScene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="TEPlayer.cpp" />
   </ItemGroup>
 </Project>

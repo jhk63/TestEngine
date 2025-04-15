@@ -15,6 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TEComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEInput.h" />
@@ -22,8 +23,10 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)TEScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TESceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TETime.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TETransform.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)TEComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEInput.cpp" />
@@ -31,5 +34,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)TEScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TESceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TETime.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)TETransform.cpp" />
   </ItemGroup>
 </Project>

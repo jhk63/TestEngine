@@ -13,46 +13,42 @@ namespace TestEngine
 
 	GameObject::~GameObject()
 	{
+		for (Component* comp : mComponents)
+		{
+			delete comp;
+			comp = 0;
+		}
+	}
+
+	void GameObject::Initialize()
+	{
+		for (Component* comp : mComponents)
+		{
+			comp->Initialize();
+		}
 	}
 
 	void GameObject::Update()
 	{
-		const int speed = 200.f;
-
-		if (Input::GetKey(eKeyCode::A) || Input::GetKey(eKeyCode::Left))
+		for (Component* comp : mComponents)
 		{
-			mX -= speed * Time::DeltaTime();
-		}
-
-		if (Input::GetKey(eKeyCode::D) || Input::GetKey(eKeyCode::Right))
-		{
-			mX += speed * Time::DeltaTime();
-		}
-
-		if (Input::GetKey(eKeyCode::W) || Input::GetKey(eKeyCode::Up))
-		{
-			mY -= speed * Time::DeltaTime();
-		}
-
-		if (Input::GetKey(eKeyCode::S) || Input::GetKey(eKeyCode::Down))
-		{
-			mY += speed * Time::DeltaTime();
+			comp->Update();
 		}
 	}
 
 	void GameObject::LateUpdate()
 	{
+		for (Component* comp : mComponents)
+		{
+			comp->LateUpdate();
+		}
 	}
 
 	void GameObject::Render(HDC hdc)
 	{
-		//HBRUSH brush = CreateSolidBrush(RGB(0, 0, 255));
-		HBRUSH brush = CreateSolidBrush(RGB(rand() % 255, rand() % 255, rand() % 255));
-		HBRUSH prevBrush = (HBRUSH)SelectObject(hdc, brush);
-
-		Rectangle(hdc, 500 + mX, 500 + mY, 600 + mX, 600 + mY);
-
-		SelectObject(hdc, prevBrush);
-		DeleteObject(brush);
+		for (Component* comp : mComponents)
+		{
+			comp->Render(hdc);
+		}
 	}
 }

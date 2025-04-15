@@ -20,9 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TELoadScenes.h" />
+    <ClInclude Include="TEPlayer.h" />
     <ClInclude Include="TEPlayScene.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="TEPlayer.cpp" />
     <ClCompile Include="TEPlayScene.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

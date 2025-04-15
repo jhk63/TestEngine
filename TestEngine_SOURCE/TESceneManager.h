@@ -11,6 +11,12 @@ namespace TestEngine
 	class SceneManager
 	{
 	public:
+		
+		static bool Initialize();
+		static void Update();
+		static void LateUpdate();
+		static void Render(HDC hdc);
+
 		template <typename T>
 		static Scene* CreateScene(const std::wstring& name)
 		{
@@ -22,6 +28,7 @@ namespace TestEngine
 
 			return scene;
 		}
+
 		static Scene* LoadScene(const std::wstring& name)
 		{
 			std::map<std::wstring, Scene*>::iterator iter = mScene.find(name);
@@ -35,11 +42,6 @@ namespace TestEngine
 
 			return iter->second;
 		}
-
-		static bool Initialize();
-		static void Update();
-		static void LateUpdate();
-		static void Render(HDC hdc);
 	
 	private:
 		static std::map<std::wstring, Scene*> mScene;
