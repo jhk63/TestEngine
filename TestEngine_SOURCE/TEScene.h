@@ -2,10 +2,12 @@
 #pragma once
 
 #include "TEEntity.h"
+#include "TELayer.h"
 
 
 namespace TestEngine
 {
+	class GameObject;
 	class Scene : public Entity
 	{
 	public:
@@ -17,9 +19,14 @@ namespace TestEngine
 		virtual void LateUpdate();
 		virtual void Render(HDC hdc);
 
-		void AddGameObject(class GameObject* gameObject);
+		virtual void OnEnter();
+		virtual void OnExit();
+
+		void AddGameObject(GameObject* gameObject, eLayerType type);
+
+		Layer* GetLayer(eLayerType Type) { return mLayers[(UINT)Type]; }
 
 	private:
-		std::vector<class GameObject*> mGameObjects = {};
+		std::vector<Layer*> mLayers;
 	};
 }

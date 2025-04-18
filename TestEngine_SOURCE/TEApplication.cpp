@@ -58,7 +58,17 @@ namespace TestEngine
 
 	void Application::LateUpdate()
 	{
+		SceneManager::LateUpdate();
 
+		if (Input::GetKeyDown(eKeyCode::Q))
+		{
+			SceneManager::LoadScene(L"TitleScene");
+		}
+
+		if (Input::GetKeyDown(eKeyCode::W))
+		{
+			SceneManager::LoadScene(L"PlayScene");
+		}
 	}
 
 	void Application::Render()

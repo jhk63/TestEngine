@@ -31,6 +31,11 @@ namespace TestEngine
 
 		static Scene* LoadScene(const std::wstring& name)
 		{
+			if (mActiveScene != nullptr)
+			{
+				mActiveScene->OnExit();
+			}
+			
 			std::map<std::wstring, Scene*>::iterator iter = mScene.find(name);
 
 			if (iter == mScene.end())
@@ -39,6 +44,7 @@ namespace TestEngine
 			}
 
 			mActiveScene = iter->second;
+			mActiveScene->OnEnter();
 
 			return iter->second;
 		}

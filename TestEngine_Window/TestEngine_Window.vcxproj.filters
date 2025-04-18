@@ -13,11 +13,17 @@
       <Filter>Scenes</Filter>
     </ClInclude>
     <ClInclude Include="TEPlayer.h" />
+    <ClInclude Include="TETitleScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TEPlayScene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
     <ClCompile Include="TEPlayer.cpp" />
+    <ClCompile Include="TETitleScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -22,10 +22,12 @@
     <ClInclude Include="TELoadScenes.h" />
     <ClInclude Include="TEPlayer.h" />
     <ClInclude Include="TEPlayScene.h" />
+    <ClInclude Include="TETitleScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TEPlayer.cpp" />
     <ClCompile Include="TEPlayScene.cpp" />
+    <ClCompile Include="TETitleScene.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
