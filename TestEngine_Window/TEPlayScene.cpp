@@ -5,6 +5,7 @@
 #include "TEPlayer.h"
 #include "TETransform.h"
 #include "TESpriteRenderer.h"
+#include "TEObject.h"
 
 
 namespace TestEngine
@@ -19,17 +20,13 @@ namespace TestEngine
 
 	bool PlayScene::Initialize()
 	{
-		player = new Player();
-
-		Transform* tr = player->AddComponent<Transform>();
-		tr->SetPos(Vector2(0, 0));
-		tr->SetName(L"Transform");
+		player = Object::Instantiate<Player>(Enums::eLayerType::Player, Vector2(100, 0));
 
 		SpriteRenderer* sr = player->AddComponent<SpriteRenderer>();
 		sr->SetName(L"SpriteRenderer");
 		sr->ImageLoad(L"..\\Resources\\bg.png");
 
-		 AddGameObject(player, eLayerType::Player);
+		AddGameObject(player, Enums::eLayerType::Player);
 
 		return true;
 	}
@@ -50,5 +47,13 @@ namespace TestEngine
 
 		wchar_t str[50] = L"Play Scene";
 		TextOut(hdc, 10, 30, str, wcslen(str));
+	}
+
+	void PlayScene::OnEnter()
+	{
+	}
+
+	void PlayScene::OnExit()
+	{
 	}
 }

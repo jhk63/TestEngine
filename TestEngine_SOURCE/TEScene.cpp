@@ -9,8 +9,8 @@ namespace TestEngine
 	Scene::Scene()
 	{
 		// Create Layer
-		mLayers.resize((UINT)eLayerType::Max);
-		for (size_t i = 0; i < (UINT)eLayerType::Max; i++)
+		mLayers.resize((UINT)Enums::eLayerType::Max);
+		for (size_t i = 0; i < (UINT)Enums::eLayerType::Max; i++)
 		{
 			mLayers[i] = new Layer();
 		}
@@ -70,7 +70,7 @@ namespace TestEngine
 	{
 	}
 
-	void Scene::AddGameObject(GameObject* gameObject, eLayerType type)
+	void Scene::AddGameObject(GameObject* gameObject, Enums::eLayerType type)
 	{
 		mLayers[(UINT)type]->AddGameObject(gameObject);
 	}

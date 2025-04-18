@@ -3,12 +3,14 @@
 
 #include "TEInput.h"
 #include "TETime.h"
+#include "TETransform.h"
 
 
 namespace TestEngine
 {
 	GameObject::GameObject()
 	{
+		AddComponent<Transform>();
 	}
 
 	GameObject::~GameObject()
@@ -50,5 +52,10 @@ namespace TestEngine
 		{
 			comp->Render(hdc);
 		}
+	}
+
+	void GameObject::InitializeTransform()
+	{
+		AddComponent<Transform>();
 	}
 }

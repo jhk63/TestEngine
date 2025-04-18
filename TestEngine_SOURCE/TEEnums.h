@@ -2,7 +2,7 @@
 #pragma once
 
 
-namespace TestEngine
+namespace TestEngine::Enums
 {
 	enum class eLayerType
 	{

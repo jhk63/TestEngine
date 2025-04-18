@@ -22,8 +22,9 @@ namespace TestEngine
 		{
 			T* scene = new T();
 			scene->SetName(name);
-			scene->Initialize();
+			mActiveScene = scene;
 
+			scene->Initialize();
 			mScene.insert(std::make_pair(name, scene));
 
 			return scene;
@@ -48,6 +49,8 @@ namespace TestEngine
 
 			return iter->second;
 		}
+
+		static Scene* GetActiveScene() { return mActiveScene; }
 	
 	private:
 		static std::map<std::wstring, Scene*> mScene;

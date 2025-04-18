@@ -23,6 +23,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)TEApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TELayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEMath.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TEObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TESceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TESpriteRenderer.h" />
