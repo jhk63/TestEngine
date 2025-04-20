@@ -24,9 +24,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)TELayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TEResource.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TEResources.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TESceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TESpriteRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TETexture.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TETime.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TETransform.h" />
   </ItemGroup>
@@ -38,9 +41,12 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)TEApplication.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TELayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEMath.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)TEResource.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)TEResources.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TESceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TESpriteRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)TETexture.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TETime.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TETransform.cpp" />
   </ItemGroup>

@@ -20,5 +20,8 @@ namespace TestEngine::Math
 		{
 
 		}
+
+		static Vector2 Zero;
+		static Vector2 One;
 	};
 }

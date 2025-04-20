@@ -29,31 +29,30 @@ namespace TestEngine
 
 	void SpriteRenderer::Render(HDC hdc)
 	{
-		Transform* tr = GetOwner()->GetComponent<Transform>();
+		if (!mTexture) assert(false);
 
+		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
 
-		Gdiplus::Graphics graphics(hdc);
-		graphics.DrawImage(mImage, Gdiplus::Rect(pos.x, pos.y, mWidth, mHeight));
+		if (mTexture->GetTextureType() == Texture::eTextureType::Bmp)
+		{
+			TransparentBlt(hdc,
+				pos.x, pos.y,
+				mTexture->GetWidth() * mSize.x, mTexture->GetHeight() * mSize.y,
+				mTexture->GetHdc(), 0, 0, 
+				mTexture->GetWidth(), mTexture->GetHeight(), 
+				RGB(255, 0, 255));
+		}
+		else if (mTexture->GetTextureType() == Texture::eTextureType::Png)
+		{
+			Gdiplus::Graphics graphics(hdc);
+			graphics.DrawImage(mTexture->GetImage(), 
+				Gdiplus::Rect(
+					pos.x, pos.y, 
+					mTexture->GetWidth() * mSize.x, mTexture->GetHeight() * mSize.y
+				));
+		} 
+		
 	}
 
-	void SpriteRenderer::ImageLoad(const std::wstring& path)
-	{
-		mImage = Gdiplus::Image::FromFile(path.c_str());
-		mWidth = mImage->GetWidth();
-		mHeight = mImage->GetHeight();
-	}
-
-	void SpriteRenderer::ExamplePrintRectangle(HDC hdc)
-	{
-		Transform* tr = GetOwner()->GetComponent<Transform>();
-
-		HBRUSH brush = CreateSolidBrush(RGB(255, 0, 0));
-		HBRUSH prevBrush = (HBRUSH)SelectObject(hdc, brush);
-
-		// Rectangle(hdc, tr->GetX(), tr->GetY(), tr->GetX() + 100, tr->GetY() + 100);
-
-		SelectObject(hdc, prevBrush);
-		DeleteObject(brush);
-	}
 }

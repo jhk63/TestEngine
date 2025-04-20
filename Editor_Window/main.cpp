@@ -6,6 +6,7 @@
 
 #include "..\\TestEngine_SOURCE\\TEApplication.h"
 #include "..\\TestEngine_Window\\TELoadScenes.h"
+#include "..\\TestEngine_Window\\TELoadResources.h"
 
 
 TestEngine::Application application;
@@ -70,12 +71,16 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,				// 프로그램의 인스턴�
 	// PeekMessage: 큐에 메세지 유무에 상관없이 함수가 리턴된다.
 	//				리턴 값이 true 인 경우 메세지가 있고, false 인 경우 메세지가 없다고 알려준다.
 
-	while (true)
+	bool loop = true;
+	while (loop)
 	{
 		if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
 		{
 			if (msg.message == WM_QUIT)
+			{
+				loop = false;
 				break;
+			}
 
 			if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
 			{
@@ -161,6 +166,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 	Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
 
 	// Load Scenes
+	TestEngine::LoadResources();
 	TestEngine::LoadScenes();
 
 	return TRUE;

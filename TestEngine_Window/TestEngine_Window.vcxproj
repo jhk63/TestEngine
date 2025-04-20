@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="TELoadResources.h" />
     <ClInclude Include="TELoadScenes.h" />
     <ClInclude Include="TEPlayer.h" />
     <ClInclude Include="TEPlayScene.h" />

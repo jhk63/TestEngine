@@ -21,6 +21,8 @@ namespace TestEngine
 
 		void Render();
 
+		HDC GetHdc() { return mHdc; }
+
 	private:
 		void InitializeWindows(UINT width, UINT height);
 		bool InitializeBackBuffer(UINT width, UINT height);

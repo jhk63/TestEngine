@@ -2,6 +2,7 @@
 #pragma once
 
 #include "TEComponent.h"
+#include "TETexture.h"
 
 
 namespace TestEngine
@@ -17,13 +18,11 @@ namespace TestEngine
 		virtual void LateUpdate() override;
 		virtual void Render(HDC hdc) override;
 
-		void ImageLoad(const std::wstring& path);
-
-		void ExamplePrintRectangle(HDC hdc);
+		void SetTexture(Texture* texture) { mTexture = texture; }
+		void SetSize(Math::Vector2 size) { mSize = size; }
 
 	private:
-		Gdiplus::Image* mImage = nullptr;
-		UINT mWidth = 0;
-		UINT mHeight = 0;
+		Texture* mTexture;
+		Math::Vector2 mSize = Math::Vector2::One;
 	};
 }
