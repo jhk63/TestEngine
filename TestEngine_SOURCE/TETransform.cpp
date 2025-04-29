@@ -5,6 +5,7 @@
 namespace TestEngine
 {
 	Transform::Transform()
+		: Component(Enums::eComponentType::Transform)
 	{
 	}
 

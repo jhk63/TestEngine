@@ -3,11 +3,13 @@
 
 #include "TEGameObject.h"
 #include "TETransform.h"
+#include "TERenderer.h"
 
 
 namespace TestEngine
 {
 	SpriteRenderer::SpriteRenderer()
+		: Component(Enums::eComponentType::SpriteRenderer)
 	{
 	}
 
@@ -33,6 +35,7 @@ namespace TestEngine
 
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
+		pos = Renderer::mainCamera->CalculatePosition(pos);
 
 		if (mTexture->GetTextureType() == Texture::eTextureType::Bmp)
 		{

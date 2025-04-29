@@ -5,13 +5,7 @@
       <Filter>Core</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)TESpriteRenderer.cpp">
-      <Filter>Rendering</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)TEEntity.cpp">
-      <Filter>Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)TEGameObject.cpp">
-      <Filter>Entity</Filter>
+      <Filter>Component\Rendering</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)TEInput.cpp">
       <Filter>Input</Filter>
@@ -32,10 +26,7 @@
       <Filter>Scene</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)TEComponent.cpp">
-      <Filter>Entity</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)TETransform.cpp">
-      <Filter>Entity</Filter>
+      <Filter>Component</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)TEResource.cpp">
       <Filter>Resource</Filter>
@@ -43,20 +34,32 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)TEResources.cpp">
       <Filter>Resource</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)TETexture.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)TETexture.cpp">
+      <Filter>Resource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)TEEntity.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)TEGameObject.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)TEScript.cpp">
+      <Filter>Component\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)TETransform.cpp">
+      <Filter>Component\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)TECamera.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)TERenderer.cpp">
+      <Filter>Renderer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)TEApplication.h">
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)TESpriteRenderer.h">
-      <Filter>Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)TEEntity.h">
-      <Filter>Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)TEGameObject.h">
-      <Filter>Entity</Filter>
+      <Filter>Component\Rendering</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)TEInput.h">
       <Filter>Input</Filter>
@@ -86,10 +89,7 @@
       <Filter>Core</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)TEComponent.h">
-      <Filter>Entity</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)TETransform.h">
-      <Filter>Entity</Filter>
+      <Filter>Component</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)TEResource.h">
       <Filter>Resource</Filter>
@@ -97,7 +97,25 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)TEResources.h">
       <Filter>Resource</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)TETexture.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TETexture.h">
+      <Filter>Resource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TEEntity.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TEGameObject.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TEScript.h">
+      <Filter>Component\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TETransform.h">
+      <Filter>Component\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TECamera.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TERenderer.h">
+      <Filter>Renderer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">
@@ -115,17 +133,29 @@
     <Filter Include="Scene">
       <UniqueIdentifier>{d8c2440a-110a-4c29-b3da-1f23f9859bf1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Rendering">
-      <UniqueIdentifier>{fada0fc3-5013-41d1-b119-c20ef53d51c8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Entity">
-      <UniqueIdentifier>{a2e7d049-fe96-48a5-82e1-d4d36624dca2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource">
       <UniqueIdentifier>{052aa6f6-2e84-4d07-83c9-3fb9dbd17de7}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource\Texture">
       <UniqueIdentifier>{6387ab3a-38fc-49ff-82db-e4c0eff33cf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component">
+      <UniqueIdentifier>{a2e7d049-fe96-48a5-82e1-d4d36624dca2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject">
+      <UniqueIdentifier>{b73c97a5-6242-49e5-9f14-862b435282cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Rendering">
+      <UniqueIdentifier>{fada0fc3-5013-41d1-b119-c20ef53d51c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Script">
+      <UniqueIdentifier>{d659e249-b0ac-448c-880f-2a9c5ce0658f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Component\Transform">
+      <UniqueIdentifier>{dcf38c56-4dec-4228-b0c4-808da804c0d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Renderer">
+      <UniqueIdentifier>{2b3896e3-da6f-46db-a480-7eeb380e210f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

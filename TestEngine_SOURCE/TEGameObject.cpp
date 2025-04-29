@@ -10,7 +10,8 @@ namespace TestEngine
 {
 	GameObject::GameObject()
 	{
-		AddComponent<Transform>();
+		mComponents.resize((UINT)Enums::eComponentType::End);
+		InitializeTransform();
 	}
 
 	GameObject::~GameObject()
@@ -26,6 +27,8 @@ namespace TestEngine
 	{
 		for (Component* comp : mComponents)
 		{
+			if (!comp) continue;
+
 			comp->Initialize();
 		}
 	}
@@ -34,6 +37,8 @@ namespace TestEngine
 	{
 		for (Component* comp : mComponents)
 		{
+			if (!comp) continue;
+
 			comp->Update();
 		}
 	}
@@ -42,6 +47,8 @@ namespace TestEngine
 	{
 		for (Component* comp : mComponents)
 		{
+			if (!comp) continue;
+
 			comp->LateUpdate();
 		}
 	}
@@ -50,6 +57,8 @@ namespace TestEngine
 	{
 		for (Component* comp : mComponents)
 		{
+			if (!comp) continue;
+
 			comp->Render(hdc);
 		}
 	}

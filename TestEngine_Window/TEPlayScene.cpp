@@ -8,6 +8,9 @@
 #include "TEObject.h"
 #include "TETexture.h"
 #include "TEResources.h"
+#include "TECamera.h"
+#include "TEPlayerScript.h"
+#include "TERenderer.h"
 
 
 namespace TestEngine
@@ -22,19 +25,28 @@ namespace TestEngine
 
 	bool PlayScene::Initialize()
 	{
+		// Main Camera
+		GameObject* camera = Object::Instantiate<GameObject>(Enums::eLayerType::None);
+		Camera* cameraComp = camera->AddComponent<Camera>();
+		Renderer::mainCamera = cameraComp;
+		camera->AddComponent<PlayerScript>();
+
 		// 게임 오브젝트를 만들기 전에 먼저 리소스들을 전부 Load 해두면 좋다.
-
-		player = Object::Instantiate<Player>(Enums::eLayerType::Player, Vector2(100, 0));
-
+		player = Object::Instantiate<Player>(Enums::eLayerType::Player, Vector2(100, 100));
 		SpriteRenderer* sr = player->AddComponent<SpriteRenderer>();
 		sr->SetName(L"SpriteRenderer");
-		sr->SetTexture(Resources::Find<Texture>(L"Background"));
-		// sr->ImageLoad(L"..\\Resources\\bg.png");
+		sr->SetTexture(Resources::Find<Texture>(L"FlameDemon"));
+		sr->SetSize(Vector2(3, 3));
 
-		// Texture* texture = new Texture();
-		// texture->Load(L"..\\Resources\\bg.png");
+		background = Object::Instantiate<Player>(Enums::eLayerType::Background, Vector2(0, 0));
+		SpriteRenderer* bgSr = background->AddComponent<SpriteRenderer>();
+		bgSr->SetName(L"SpriteRenderer");
+		bgSr->SetTexture(Resources::Find<Texture>(L"Background"));
 
 		AddGameObject(player, Enums::eLayerType::Player);
+		AddGameObject(background, Enums::eLayerType::Background);
+
+		Scene::Initialize();
 
 		return true;
 	}

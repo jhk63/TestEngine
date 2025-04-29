@@ -4,7 +4,8 @@
 
 namespace TestEngine
 {
-    Component::Component()
+    Component::Component(Enums::eComponentType ComponentType)
+		: mComponentType(ComponentType)
     {
     }
 

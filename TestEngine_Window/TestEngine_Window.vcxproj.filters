@@ -4,6 +4,9 @@
     <Filter Include="Scenes">
       <UniqueIdentifier>{911130ff-272b-4fa8-b63e-48f4de2122e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scripts">
+      <UniqueIdentifier>{5ff3401e-b600-4c5a-aeef-d66737560686}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="TELoadScenes.h">
@@ -17,6 +20,9 @@
       <Filter>Scenes</Filter>
     </ClInclude>
     <ClInclude Include="TELoadResources.h" />
+    <ClInclude Include="TEPlayerScript.h">
+      <Filter>Scripts</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TEPlayScene.cpp">
@@ -25,6 +31,9 @@
     <ClCompile Include="TEPlayer.cpp" />
     <ClCompile Include="TETitleScene.cpp">
       <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="TEPlayerScript.cpp">
+      <Filter>Scripts</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

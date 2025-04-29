@@ -10,7 +10,7 @@ namespace TestEngine
 	class Component : public Entity
 	{
 	public:
-		Component();
+		Component(Enums::eComponentType ComponentType);
 		~Component();
 
 		virtual void Initialize();
@@ -20,8 +20,10 @@ namespace TestEngine
 
 		void SetOwner(GameObject* owner) { mOwner = owner; }
 		GameObject* GetOwner() { return mOwner; }
+		Enums::eComponentType GetComponentType() { return mComponentType; }
 
 	private:
 		GameObject* mOwner = 0;
+		Enums::eComponentType mComponentType;
 	};
 }

@@ -21,6 +21,7 @@ namespace TestEngine
 		void OnExit() override;
 
 	private:
+		class GameObject* background;
 		class Player* player;
 	};
 }

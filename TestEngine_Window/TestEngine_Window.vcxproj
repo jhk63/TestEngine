@@ -22,11 +22,13 @@
     <ClInclude Include="TELoadResources.h" />
     <ClInclude Include="TELoadScenes.h" />
     <ClInclude Include="TEPlayer.h" />
+    <ClInclude Include="TEPlayerScript.h" />
     <ClInclude Include="TEPlayScene.h" />
     <ClInclude Include="TETitleScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TEPlayer.cpp" />
+    <ClCompile Include="TEPlayerScript.cpp" />
     <ClCompile Include="TEPlayScene.cpp" />
     <ClCompile Include="TETitleScene.cpp" />
   </ItemGroup>

@@ -15,6 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TECamera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEEnums.h" />
@@ -24,16 +25,19 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)TELayer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TERenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEResource.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEResources.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TESceneManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TEScript.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TESpriteRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TETexture.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TETime.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TETransform.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)TECamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEGameObject.cpp" />
@@ -41,10 +45,12 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)TEApplication.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TELayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEMath.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)TERenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEResource.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEResources.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TESceneManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)TEScript.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TESpriteRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TETexture.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TETime.cpp" />

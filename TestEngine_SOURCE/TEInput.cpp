@@ -25,7 +25,7 @@ namespace TestEngine
 	{
 		for (size_t i = 0; i < mKeys.size(); i++)
 		{
-			// Key°¡ ´­·ÈÀ» ¶§
+			// Update Key Down
 			if (GetAsyncKeyState(ASCII[i]) & 0x8000)
 			{
 				if (mKeys[i].bPressed == true)
@@ -39,6 +39,7 @@ namespace TestEngine
 
 				mKeys[i].bPressed = true;
 			}
+			// Update Key Up
 			else
 			{
 				if (mKeys[i].bPressed == true)

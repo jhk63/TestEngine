@@ -10,5 +10,6 @@ namespace TestEngine
 	void LoadResources()
 	{
 		Resources::Load<Texture>(L"Background", L"..\\Resources\\bg.png");
+		Resources::Load<Texture>(L"FlameDemon", L"..\\Resources\\FlameDemon.png");
 	}
 }
