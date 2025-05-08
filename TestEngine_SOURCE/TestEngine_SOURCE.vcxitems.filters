@@ -53,6 +53,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)TERenderer.cpp">
       <Filter>Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)TEAnimator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)TEAnimation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)TEApplication.h">
@@ -116,6 +118,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)TERenderer.h">
       <Filter>Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)TEAnimator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TEAnimation.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Core">

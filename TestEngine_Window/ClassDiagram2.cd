@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TestEngine::PlayScene" Collapsed="true">
+    <Position X="1.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAQAAAAAAIAAACAAQAAABAJAAAAAAIAA=</HashCode>
+      <FileName>TEPlayScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::PlayerScript" Collapsed="true">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAABAAAQAAAAAAIAAAAAAQgQAAABAAAAAAAAA=</HashCode>
+      <FileName>TEPlayerScript.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::Player" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAIAAAAAAAAAAAABAAAAAAAAA=</HashCode>
+      <FileName>TEPlayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::Camera" Collapsed="true">
+    <Position X="10.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAAAAQBAQAAAIAAAQAAACAAAABAAABAAAiA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TECamera.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::Input" Collapsed="true">
+    <Position X="21.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAAAAAAAAQAAAAAAAAQAIAAAAAAgAAAACAAAAAA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TEInput.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::Script" Collapsed="true">
+    <Position X="5.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAIAAAAAAAAAAAABAAAAAhAAA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TEScript.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::SpriteRenderer" Collapsed="true">
+    <Position X="8" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQQAAAAAAAAAQBAAAAIIAAAACAAAAAAABAAAAAAIAA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TESpriteRenderer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::Time" Collapsed="true">
+    <Position X="21.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAAAAAAAESABAAAAAAAAAAAAAAAAABAAAAEAAAA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TETime.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::Transform" Collapsed="true">
+    <Position X="12.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAQAAAAAAIAQAAAAAAgAAABAAAAAAAoA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TETransform.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::TitleScene" Collapsed="true">
+    <Position X="3.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAQAAAAAAIIAAAAAAAIAAABAAAAAAAAA=</HashCode>
+      <FileName>TETitleScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::Application" Collapsed="true">
+    <Position X="19.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAQARAABQAAQAEgIQAACIACAAAAABABAAQAAAI=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TEApplication.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::GameObject" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAAAAAAAIgQAAAgAAJAAAAAAAAAAAABAAAAIAAAA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TEGameObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::Component" Collapsed="true">
+    <Position X="9" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQgAAAIAIAAAQAAAAAAIAABAAAAAAAAABBCAAAAAAA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TEComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::Entity" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAgAQAAABAA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TEEntity.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::Layer" Collapsed="true">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAQAAIAAAQAAAAAAIAAAAAAAAAAEABAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TELayer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::Resource" Collapsed="true">
+    <Position X="17" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAIAAAAAAAAAAIABAAAAACIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TEResource.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::Resources" Collapsed="true">
+    <Position X="23" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAIAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TEResources.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::Scene" Collapsed="true">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAAAAAAAAQAAgAAAIAAAQAAQAAAABJAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TEScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::SceneManager" Collapsed="true">
+    <Position X="19.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAQAAAAAQAAAABAKAAAAAAAAAgAABAAACAAAAA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TESceneManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestEngine::Texture" Collapsed="true">
+    <Position X="17" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAgAAQAAAAhAAAAAAAABBQABAEAAAAAAIAAEQAAAI=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TETexture.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="TestEngine::Math::Vector2" Collapsed="true">
+    <Position X="19.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TEMath.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="TestEngine::Math::Vector2" Collapsed="true">
+    <Position X="21.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAQAAAAAAAABgAAAAAIA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TEMath.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="TestEngine::eKeyState" Collapsed="true">
+    <Position X="23" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEAAI=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TEInput.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestEngine::eKeyCode" Collapsed="true">
+    <Position X="21.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAIAAAAAAAAAAAAAAAAAAAAAAAAACACAvv//YQM=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TEInput.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestEngine::Enums::eComponentType" Collapsed="true">
+    <Position X="19.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAgIAA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TEEnums.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestEngine::Enums::eLayerType" Collapsed="true">
+    <Position X="19.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAgAQEAAAA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TEEnums.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TestEngine::Enums::eResourceType" Collapsed="true">
+    <Position X="21.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAIIAAAAAAAA=</HashCode>
+      <FileName>C:\Users\woghks\source\repos\TestEngine\TestEngine_SOURCE\TEEnums.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="맑은 고딕" Size="9" />
+</ClassDiagram>

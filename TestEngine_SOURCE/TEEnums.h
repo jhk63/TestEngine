@@ -10,6 +10,7 @@ namespace TestEngine::Enums
 		SpriteRenderer,
 		Script,
 		Camera,
+		Animator,
 		End,
 	};
 
@@ -26,6 +27,7 @@ namespace TestEngine::Enums
 	{
 		Texture,
 		AudioClip,
+		Animation,
 		Prefab,
 		End,
 	};

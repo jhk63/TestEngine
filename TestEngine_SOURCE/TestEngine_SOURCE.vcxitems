@@ -15,6 +15,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TEAnimation.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)TEAnimator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TECamera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)TEEntity.h" />
@@ -37,6 +39,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)TETransform.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)TEAnimation.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)TEAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TECamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)TEEntity.cpp" />
