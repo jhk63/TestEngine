@@ -11,6 +11,7 @@
 #include "TECamera.h"
 #include "TEPlayerScript.h"
 #include "TERenderer.h"
+#include "TEAnimator.h"
 
 
 namespace TestEngine
@@ -32,16 +33,24 @@ namespace TestEngine
 		camera->AddComponent<PlayerScript>();
 
 		// 게임 오브젝트를 만들기 전에 먼저 리소스들을 전부 Load 해두면 좋다.
-		player = Object::Instantiate<Player>(Enums::eLayerType::Player, Vector2(100, 100));
-		SpriteRenderer* sr = player->AddComponent<SpriteRenderer>();
-		sr->SetName(L"SpriteRenderer");
-		sr->SetTexture(Resources::Find<Texture>(L"FlameDemon"));
-		sr->SetSize(Vector2(3, 3));
+		player = Object::Instantiate<Player>(Enums::eLayerType::Player, Vector2(50, 50));
+		Texture* playerTexture = Resources::Find<Texture>(L"Player");
+		Animator* animator = player->AddComponent<Animator>();
+		animator->CreateAnimation(L"BirdFlying", playerTexture, 
+			//Vector2(0.f, 0.f), Vector2(16.f, 16.f), Vector2::Zero, 4, 0.1f);
+			Vector2(0.f, 0.f), Vector2(32.f, 32.f), Vector2::Zero, 4, 0.5f);
+		animator->PlayerAnimation(L"BirdFlying", true);
 
-		background = Object::Instantiate<Player>(Enums::eLayerType::Background, Vector2(0, 0));
+		/*SpriteRenderer* sr = player->AddComponent<SpriteRenderer>();
+		sr->SetName(L"SpriteRenderer");
+		sr->SetTexture(Resources::Find<Texture>(L"Player"));
+		sr->SetSize(Vector2(3, 3));*/
+
+		background = Object::Instantiate<GameObject>(Enums::eLayerType::Background, Vector2(0, 0));
 		SpriteRenderer* bgSr = background->AddComponent<SpriteRenderer>();
 		bgSr->SetName(L"SpriteRenderer");
 		bgSr->SetTexture(Resources::Find<Texture>(L"Background"));
+		bgSr->SetSize(Vector2(3, 3));
 
 		AddGameObject(player, Enums::eLayerType::Player);
 		AddGameObject(background, Enums::eLayerType::Background);
